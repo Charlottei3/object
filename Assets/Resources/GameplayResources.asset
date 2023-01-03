@@ -1,0 +1,102 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85d6f0fe007f4724cb6b8c112dc33bce, type: 3}
+  m_Name: GameplayResources
+  m_EditorClassIdentifier: 
+  IceCreamColor:
+  - Body: {fileID: 0}
+    Top1: {fileID: 0}
+    Top2: {fileID: 0}
+    Topping: {fileID: 0}
+    ToppingParticle1: {fileID: 0}
+    ToppingParticle2: {fileID: 0}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: 6bc3cce06bbd3104399a0c6fc77fd880, type: 3}
+    Top1: {fileID: 21300000, guid: b2378a7a279ea854c8fcbb5be3bfa981, type: 3}
+    Top2: {fileID: 21300000, guid: 2263f8f1fe1b6ce45a17452535ca8e70, type: 3}
+    Topping: {fileID: 21300000, guid: d5eb08c07860ff44cb23a9ffad52415b, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: e45c6a70df2fdde41b0718ce8e31476a, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: 3e1faab10f2117747b0c064d99c91f91, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: 504b08bbf9db4fe408c9cf54628d1a88, type: 3}
+    Top1: {fileID: 21300000, guid: 4a209f38e1418f4449696476504f5b91, type: 3}
+    Top2: {fileID: 21300000, guid: fadb74becfb240c4280b67f8936194fc, type: 3}
+    Topping: {fileID: 21300000, guid: 159e9582d708b46499d9f65fa66cf770, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: 30a090176af8f57409b0ec119ef66489, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: d3ac84da9ef970c4689ca08d910ffae3, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: 381b3fc4550e7204d908bf1374bf6e47, type: 3}
+    Top1: {fileID: 21300000, guid: b6de077eeb1878149ab421f38272f073, type: 3}
+    Top2: {fileID: 21300000, guid: aa4a163ad2eb35b4d9e9f1002ec8bc95, type: 3}
+    Topping: {fileID: 21300000, guid: 34a73dbc11fda78429bc30191b0917bb, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: 69c02bc022faf2149b7d8a43842f0fca, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: 93ec98a7e19bb6f49ba333345bbd89bb, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: a2de0358bba5b9844b2d95152a34ecde, type: 3}
+    Top1: {fileID: 21300000, guid: cc4c883d49b33f844a652f3a16d4d094, type: 3}
+    Top2: {fileID: 21300000, guid: b71ca1ae28192c84e9a14c36d663b851, type: 3}
+    Topping: {fileID: 21300000, guid: 1da8e995f70eda84fa806f0fee00a42c, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: 78faaa6ae64bb5a429e538b737691cbc, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: 850069441ce2b234d91533cf826bfa3e, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: 873afbbf9e5744549ad6236828d25c42, type: 3}
+    Top1: {fileID: 21300000, guid: 8187d61a3b1b3a64186d36b80a9ca28e, type: 3}
+    Top2: {fileID: 21300000, guid: 564af56c5b216964ea54ad4e630d4483, type: 3}
+    Topping: {fileID: 21300000, guid: 9bc5246481dc6244096a10a30f04a342, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: fcee3f48596f8ad4daf3ebc8e04c53c2, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: 6d3417446b54dc44fa4b8aa6f79f7cf3, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Body: {fileID: 21300000, guid: c08cd15b8c3614245b24a2728aa3acfa, type: 3}
+    Top1: {fileID: 21300000, guid: 73a5e30b1330ece42ae99ab5b7d90797, type: 3}
+    Top2: {fileID: 21300000, guid: 5ab0e46b32fb19141a1d7ec2bdcee269, type: 3}
+    Topping: {fileID: 21300000, guid: 5433300d50c1dc347a7eb4d3585dc845, type: 3}
+    ToppingParticle1: {fileID: 21300000, guid: 07840ecfd8429904daa065865bd54716, type: 3}
+    ToppingParticle2: {fileID: 21300000, guid: 1f5a03fe7ee9ca4489474ab5a2a7749a, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  gameLv2:
+  - Ngua: {fileID: 21300000, guid: a65deffb70f1f584fbe293aba7e909c8, type: 3}
+    hinhNho: {fileID: 21300000, guid: 0966bf5fed8c89e41a85b94f529b7072, type: 3}
+    wolfoo: {fileID: 21300000, guid: 17d28f9f71a867c438fb021f98ffc34a, type: 3}
+    bong: {fileID: 21300000, guid: 8676b40e85b48ad419aec5a39b2510eb, type: 3}
+    cot: {fileID: 21300000, guid: f69e62cc3f7375b4793c300e4eb27fbf, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Ngua: {fileID: 21300000, guid: f358de761510fec4ca64717cf1bfef9a, type: 3}
+    hinhNho: {fileID: 21300000, guid: 8bc15bdc97e37de47b8cde9b2901b11a, type: 3}
+    wolfoo: {fileID: 21300000, guid: d63db0fe45bcfc64c8573b0b27c5d62e, type: 3}
+    bong: {fileID: 21300000, guid: c3c575a9dd9c60043816f451c5e0ccf0, type: 3}
+    cot: {fileID: 21300000, guid: bbfd423d868998a488bc4c1a76e886e3, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Ngua: {fileID: 21300000, guid: d76106321cd52f547b272e1d9c58fc18, type: 3}
+    hinhNho: {fileID: 21300000, guid: a340320bb7d6c144f9cb90bbcf7ad19e, type: 3}
+    wolfoo: {fileID: 21300000, guid: 98ec49e3441d337469ca49796d681ade, type: 3}
+    bong: {fileID: 21300000, guid: 10d8e2db37ffc624e97f939ce465d4a2, type: 3}
+    cot: {fileID: 21300000, guid: 5e3c9c83a4efcac4b8c92407f7903276, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Ngua: {fileID: 21300000, guid: baee19f1ec875b942ad1b90e41e46bba, type: 3}
+    hinhNho: {fileID: 21300000, guid: 7dc3ce5918284e84ea0f82a3cec51535, type: 3}
+    wolfoo: {fileID: 21300000, guid: 932149f63211b4c4b8ed919f97e58e3f, type: 3}
+    bong: {fileID: 21300000, guid: 977752247f2b08c49bccca53adbf08ea, type: 3}
+    cot: {fileID: 21300000, guid: 8a7d862c4df383a4b82eeafac4fd0dda, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - Ngua: {fileID: 21300000, guid: 2f8edba33cd291344820ca0d6162f86b, type: 3}
+    hinhNho: {fileID: 21300000, guid: c8ac4d6cd02479242aae5c9d8e7995a6, type: 3}
+    wolfoo: {fileID: 21300000, guid: cc4cad628bb1f904ebad7a965c46faf8, type: 3}
+    bong: {fileID: 21300000, guid: 0b8ed3fea1c48e34285b0c9ac97204d0, type: 3}
+    cot: {fileID: 21300000, guid: a60da5fd0091cbc46ac170020a172cab, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  lv3GamePlay:
+  - duQuay: {fileID: 21300000, guid: 05bb644838e79a041b7d12db6bce26e9, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - duQuay: {fileID: 21300000, guid: 35591ca2b04533840beee6303b25c800, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
+  - duQuay: {fileID: 21300000, guid: a36c9c2bd0731d542a35054ed26144b9, type: 3}
+    dropPosition: {x: 0, y: 0, z: 0}
