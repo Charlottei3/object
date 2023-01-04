@@ -1,6 +1,8 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,21 +12,22 @@ public class lv4Controller : MonoBehaviour
     public static lv4Controller Instance { get { return _instance; } }
 
     public GameObject _moveTrain;
-    public GameObject trainAll;
-
-    public getIDCricle type;
    
     public int Count;
    
 
     [SerializeField] GameObject[] chodevao;
+    [SerializeField] public GameObject pos;
     [SerializeField] GameObject[] wf;
 
-   
+    [SerializeField] List<GameObject> ranxTrain = new List<GameObject>();
     
 
     [SerializeField] List<Image> _imgTrains = new List<Image>();
-  
+
+    [SerializeField] List<GameObject> icon = new List<GameObject>();
+    [SerializeField] GameObject[] _ranIcon;
+
     [SerializeField] GameObject objImg;
 
     private void Awake()
@@ -34,6 +37,8 @@ public class lv4Controller : MonoBehaviour
     void Start()
     {
         ranItem();
+        ranTrain();
+        ranIcon();
     }
  
     public void AddCount()
@@ -41,22 +46,12 @@ public class lv4Controller : MonoBehaviour
         Count++;
         if (Count == 3)
         {
-            trainAll.transform.DOMove(_moveTrain.transform.position, 1);
+            pos .transform.DOMove(_moveTrain.transform.position, 1);
 
             for (int i = 0; i < chodevao.Length; i++)
             {
-                if (i >= 3)
-                {
-                    chodevao[i].GetComponent<UIBox>().isOpen = true;
-                }
-                else
-                {
-                    chodevao[i].GetComponent<UIBox>().isOpen = false;
-                }
-                for (int j = 0; j <3; j++)
-                {
-                    wf[j].transform.SetParent(chodevao[i].transform);
-                }
+                UIBox b = chodevao[i].GetComponent<UIBox>();
+                b.isOpen = !b.isOpen;
 
             }
         }
@@ -68,13 +63,55 @@ public class lv4Controller : MonoBehaviour
     }
    public void ranItem()
     {
-        _imgTrains[5].sprite = _imgTrains[6].sprite;
+        _imgTrains[1].sprite = _imgTrains[2].sprite;
     }
     public void _replace()
     {
-        for (int i = 0; i < _imgTrains.Count-1; i++)
+        _imgTrains[1].sprite = _imgTrains[0].sprite;
+    }
+
+    public void ranTrain()
+    {
+
+        List<GameObject> tempData = new List<GameObject>();
+        tempData.AddRange(ranxTrain);
+
+        for (int i = 0; i < chodevao.Length; i++)
         {
-            _imgTrains[5].type = _imgTrains[i].type;
+            int _ranIt = Random.Range(0, tempData.Count- 1);
+            GameObject cd = chodevao[i];
+            GameObject ranPos = tempData[_ranIt];
+            cd.transform.position= ranPos.transform.position;
+            tempData.RemoveAt(_ranIt);
+            if(ranxTrain.IndexOf(ranPos) < 3)
+            {
+                cd.GetComponent<UIBox>().isOpen = true;
+            }
+            else
+            {
+                cd.GetComponent<UIBox>().isOpen = false;
+            }
+
         }
+
+    }
+
+    public void ranIcon()
+    {
+
+        List<GameObject> tempIm = new List<GameObject>();
+        tempIm.AddRange(icon);
+
+        for (int i = 0; i < _ranIcon.Length; i++)
+        {
+            int _ranIm = Random.Range(0, tempIm.Count);
+            GameObject cd = _ranIcon[i];
+            GameObject ranPosIm = tempIm[_ranIm];
+            cd.transform.position = ranPosIm.transform.position;
+            tempIm.RemoveAt(_ranIm);
+          
+
+        }
+
     }
 }

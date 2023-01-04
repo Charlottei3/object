@@ -15,8 +15,6 @@ public class moveLv4 : MonoBehaviour
     [SerializeField] AnimationSpineController.SpineAnim animOnPle;
     [SerializeField] AnimationSpineController.SpineAnim animIdle;
     [SerializeField] UIBox box;
-    [SerializeField] private TypeBox typeBox;
-
 
     [SerializeField] private DragObject character;
 
@@ -50,7 +48,9 @@ public class moveLv4 : MonoBehaviour
             transform.DOJump(box.transform.position, 2f, 1, 0.5f).OnComplete(()=>
             {
                 lv4Controller.Instance.AddCount();
+
             });
+            transform.SetParent(lv4Controller.Instance.pos.transform);
         }
         else
 
