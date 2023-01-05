@@ -6,11 +6,13 @@ using SCN.ActionLib;
 using DG.Tweening;
 using UnityEngine.EventSystems;
 using System;
+using UnityEngine.UI;
 
 public class lv5Move : MonoBehaviour
 {
     [SerializeField] DragObject dragObjects;
     [SerializeField] private GameObject movePos;
+    [SerializeField] private GameObject movObj;
     void Start()
     {
         dragObjects.Init();
@@ -22,6 +24,19 @@ public class lv5Move : MonoBehaviour
 
     private void OnDrop(BaseEventData arg0)
     {
-        transform.DOMove(movePos.transform.position, 1f);
+        if (Vector2.Distance(movObj.transform.position, transform.position) < 2)
+        {
+            transform.DOMove(movObj.transform.position, 0.5f);
+            transform.DORotate(movObj.transform.eulerAngles, 1);
+            GetComponent<Image>().raycastTarget = false;
+
+            lv5Controller.Instance.AddCount();
+        }
+        else
+        {
+            transform.DOMove(movePos.transform.position, 1f);
+        }
+
+        
     }
 }
