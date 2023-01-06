@@ -9,7 +9,8 @@ public class lv5Controller : MonoBehaviour
 
     [SerializeField] List<Step> _steps;
 
-    [SerializeField] List<GameObject> posItem;
+    [SerializeField] List<GameObject> posItem;//pos
+    [SerializeField] GameObject[] rabalon;//gamobj
 
     int index;
     int Count;
@@ -21,50 +22,55 @@ public class lv5Controller : MonoBehaviour
     void Start()
     {
         ranIcon();
+        
     }
 
     public void AddCount()
     {
+      
         Count++;
+        Debug.Log(Count);
         if (Count == 2)
         {
             nextStep();
             Count = 0;
+           
         }
-        
+       
+
     }
     public void nextStep()
     {
-        index++;
         int ranI = Random.Range(0, _steps.Count - 1);
-        _steps[index] = _steps[ranI];
-
-
-        for (int j = 0; j < _steps[ranI].objects.Length; j++)
+        index++;
+        if (index == 4)
+            return;
+        Step step = _steps[ranI];
+        Debug.Log("random steo: "+ ranI);
+        
+        for (int j = 0; j <step.objects.Length; j++)
         {
-            _steps[ranI].objects[j].SetActive(true);
+            step.objects[j].SetActive(true);
 
         }
         _steps.RemoveAt(ranI);
-        index= 0;
 
-        Debug.Log(ranI + " " + Count);
-        Debug.Log(_steps[ranI].objects[index].name);
-        Debug.Log(_steps[index]);
+        Debug.Log(" index: "+index);
 
     }
+ 
 
     public void ranIcon()
     {
 
         List<GameObject> tempIm = new List<GameObject>();
         tempIm.AddRange(posItem);
-        Step step= _steps[index];
 
-        for (int i = 2; i < step.objects.Length; i++)
+        for (int i = 0; i < rabalon.Length; i++)
         {
+            GameObject cd = rabalon[i];
+
             int _ranIm = Random.Range(0, tempIm.Count);
-            GameObject cd = step.objects[i];
             GameObject ranPosIm = tempIm[_ranIm];
             cd.transform.position = ranPosIm.transform.position;
             tempIm.RemoveAt(_ranIm);

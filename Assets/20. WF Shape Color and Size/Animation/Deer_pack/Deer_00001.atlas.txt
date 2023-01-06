@@ -1,0 +1,188 @@
+
+Deer_00001.png
+size: 2048,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Banchanphai_sau
+  rotate: false
+  xy: 1553, 4
+  size: 81, 81
+  orig: 83, 83
+  offset: 1, 1
+  index: -1
+Banchanphai_truoc
+  rotate: false
+  xy: 1661, 134
+  size: 79, 80
+  orig: 81, 82
+  offset: 1, 1
+  index: -1
+Banchantrai_truoc
+  rotate: false
+  xy: 1584, 216
+  size: 81, 81
+  orig: 83, 83
+  offset: 1, 1
+  index: -1
+Chanphai_truoc
+  rotate: true
+  xy: 464, 1
+  size: 34, 189
+  orig: 34, 189
+  offset: 0, 0
+  index: -1
+Chantrai_truoc
+  rotate: true
+  xy: 274, 0
+  size: 35, 188
+  orig: 35, 188
+  offset: 0, 0
+  index: -1
+EYE_^/EYE__00001
+  rotate: false
+  xy: 1180, 55
+  size: 134, 150
+  orig: 200, 200
+  offset: 30, 25
+  index: -1
+EYE_^/EYE__00002
+  rotate: false
+  xy: 1316, 70
+  size: 135, 140
+  orig: 200, 200
+  offset: 29, 31
+  index: -1
+EYE_^/EYE__00003
+  rotate: false
+  xy: 853, 0
+  size: 136, 102
+  orig: 200, 200
+  offset: 28, 61
+  index: -1
+EYE_^/EYE__00004
+  rotate: false
+  xy: 713, 94
+  size: 136, 74
+  orig: 200, 200
+  offset: 28, 80
+  index: -1
+EYE_^/EYE__00005
+  rotate: false
+  xy: 0, 5
+  size: 135, 68
+  orig: 200, 200
+  offset: 29, 80
+  index: -1
+EYE_^/EYE__00006
+  rotate: false
+  xy: 137, 6
+  size: 135, 67
+  orig: 200, 200
+  offset: 29, 81
+  index: -1
+Group
+  rotate: false
+  xy: 1453, 2
+  size: 98, 83
+  orig: 100, 85
+  offset: 1, 1
+  index: -1
+Ngua
+  rotate: false
+  xy: 0, 155
+  size: 548, 357
+  orig: 548, 357
+  offset: 0, 0
+  index: -1
+Sung_Phai
+  rotate: false
+  xy: 1020, 207
+  size: 288, 305
+  orig: 290, 307
+  offset: 1, 1
+  index: -1
+Sung_Trai
+  rotate: true
+  xy: 1584, 299
+  size: 213, 339
+  orig: 215, 341
+  offset: 1, 1
+  index: -1
+Taiphai_sau
+  rotate: false
+  xy: 1572, 118
+  size: 87, 92
+  orig: 87, 92
+  offset: 0, 0
+  index: -1
+Taiphai_truoc
+  rotate: true
+  xy: 755, 0
+  size: 92, 96
+  orig: 92, 96
+  offset: 0, 0
+  index: -1
+Taitrai_sau
+  rotate: true
+  xy: 851, 104
+  size: 64, 94
+  orig: 64, 94
+  offset: 0, 0
+  index: -1
+Taitrai_truoc
+  rotate: true
+  xy: 655, 4
+  size: 69, 98
+  orig: 69, 98
+  offset: 0, 0
+  index: -1
+bong
+  rotate: false
+  xy: 0, 75
+  size: 711, 78
+  orig: 713, 80
+  offset: 1, 1
+  index: -1
+chanphai_sau
+  rotate: true
+  xy: 274, 37
+  size: 36, 237
+  orig: 36, 237
+  offset: 0, 0
+  index: -1
+chuong
+  rotate: false
+  xy: 1636, 24
+  size: 86, 92
+  orig: 88, 94
+  offset: 1, 1
+  index: -1
+co
+  rotate: false
+  xy: 1310, 212
+  size: 272, 300
+  orig: 272, 300
+  offset: 0, 0
+  index: -1
+dau
+  rotate: false
+  xy: 550, 170
+  size: 468, 342
+  orig: 468, 342
+  offset: 0, 0
+  index: -1
+duoi
+  rotate: true
+  xy: 991, 36
+  size: 132, 187
+  orig: 132, 187
+  offset: 0, 0
+  index: -1
+mui
+  rotate: true
+  xy: 1453, 87
+  size: 123, 117
+  orig: 125, 119
+  offset: 1, 1
+  index: -1

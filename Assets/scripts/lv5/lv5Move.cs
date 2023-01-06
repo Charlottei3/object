@@ -13,6 +13,7 @@ public class lv5Move : MonoBehaviour
     [SerializeField] DragObject dragObjects;
     [SerializeField] private GameObject movePos;
     [SerializeField] private GameObject movObj;
+
     void Start()
     {
         dragObjects.Init();
@@ -31,12 +32,11 @@ public class lv5Move : MonoBehaviour
             GetComponent<Image>().raycastTarget = false;
 
             lv5Controller.Instance.AddCount();
+            movObj.SetActive(false);
         }
         else
         {
             transform.DOMove(movePos.transform.position, 1f);
         }
-
-        
     }
 }

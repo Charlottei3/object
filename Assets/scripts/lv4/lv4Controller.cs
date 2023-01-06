@@ -25,8 +25,8 @@ public class lv4Controller : MonoBehaviour
 
     [SerializeField] List<Image> _imgTrains = new List<Image>();
 
-    [SerializeField] List<GameObject> icon = new List<GameObject>();
-    [SerializeField] GameObject[] _ranIcon;
+    [SerializeField] List<GameObject> icon = new List<GameObject>();//position
+    [SerializeField] GameObject[] _ranIcon;//gamObj
 
     [SerializeField] GameObject objImg;
 
