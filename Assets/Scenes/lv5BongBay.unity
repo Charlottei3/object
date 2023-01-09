@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragObjects: {fileID: 775141351}
-  movePos: {fileID: 498296772}
+  movePos: {fileID: 1361851298}
   movObj: {fileID: 1631438246}
 --- !u!1 &775296173
 GameObject:
@@ -3564,7 +3564,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dragObjects: {fileID: 1774040187}
-  movePos: {fileID: 1971831820}
+  movePos: {fileID: 1331138897}
   movObj: {fileID: 348753203}
 --- !u!1 &1861560221
 GameObject:

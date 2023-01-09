@@ -13,6 +13,7 @@ public class lv5Controller : MonoBehaviour
     [SerializeField] GameObject[] rabalon;//gamobj
 
     int index;
+    int idex;
     int Count;
 
     private void Awake()
@@ -36,9 +37,21 @@ public class lv5Controller : MonoBehaviour
             Count = 0;
            
         }
-       
-
     }
+
+    public void countLv6()
+    {
+
+        Count++;
+        Debug.Log(Count);
+        if (Count == 2)
+        {
+            lv6Step();
+            Count = 0;
+
+        }
+    }
+
     public void nextStep()
     {
         int ranI = Random.Range(0, _steps.Count - 1);
@@ -58,7 +71,31 @@ public class lv5Controller : MonoBehaviour
         Debug.Log(" index: "+index);
 
     }
- 
+
+    public void lv6Step()
+    {
+        idex++;
+     
+        if (idex == 1)
+        {
+            Step step = _steps[idex];
+            for (int i = 0; i < step.objects.Length; i++)
+            {
+                step.objects[i].SetActive(true);
+            }
+        }
+        
+         if (idex == 2)
+        {
+            Step step = _steps[idex];
+            for (int i = 0; i < step.objects.Length; i++)
+            {
+                step.objects[i].SetActive(true);
+            }
+        }
+        
+
+    }
 
     public void ranIcon()
     {
