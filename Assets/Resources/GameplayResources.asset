@@ -93,10 +93,5 @@ MonoBehaviour:
     bong: {fileID: 21300000, guid: 0b8ed3fea1c48e34285b0c9ac97204d0, type: 3}
     cot: {fileID: 21300000, guid: a60da5fd0091cbc46ac170020a172cab, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
-  lv3GamePlay:
-  - duQuay: {fileID: 21300000, guid: 05bb644838e79a041b7d12db6bce26e9, type: 3}
-    dropPosition: {x: 0, y: 0, z: 0}
-  - duQuay: {fileID: 21300000, guid: 35591ca2b04533840beee6303b25c800, type: 3}
-    dropPosition: {x: 0, y: 0, z: 0}
-  - duQuay: {fileID: 21300000, guid: a36c9c2bd0731d542a35054ed26144b9, type: 3}
-    dropPosition: {x: 0, y: 0, z: 0}
+  item_Noels:
+  - listSprite: []
