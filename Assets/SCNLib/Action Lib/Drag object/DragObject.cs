@@ -36,7 +36,7 @@ namespace SCN.ActionLib
 			{
 				return;
 			}
-
+			
 			isInit = true;
 
 			pos.z = transform.position.z;
@@ -59,8 +59,8 @@ namespace SCN.ActionLib
 			{
 				return;
 			}
-
-			var vt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("OnPointerDown");
+            var vt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			vt.z = transform.position.z;
 			deltaVt = transform.position - vt;
 		}
@@ -71,8 +71,8 @@ namespace SCN.ActionLib
 			{
 				return;
 			}
-
-			var vt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Debug.Log("OnDrag");
+            var vt = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 			vt.z = transform.position.z;
 
 			pos.x = horizontal ? (vt.x + deltaVt.x) : transform.position.x;
