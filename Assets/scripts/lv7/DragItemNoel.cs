@@ -23,6 +23,7 @@ public class DragItemNoel : MonoBehaviour
     [SerializeField] public GameObject movObj;
     [SerializeField] public int index;
     public float speed;
+    public Vector3 scale;
 
     private void Start()
     {
@@ -41,13 +42,15 @@ public class DragItemNoel : MonoBehaviour
 
     private void onDrop(BaseEventData arg0)
     {
-        if (Vector2.Distance(movObj.transform.position, transform.position) < 5)
+        if (Vector2.Distance(movObj.transform.position, transform.position) < 3)
         {
             transform.DOMove(movObj.transform.position, 0.3f);
 
             transform.DORotate(movObj.transform.eulerAngles, 1);
             GetComponent<Image>().raycastTarget = false;
-            transform.DOScale(new Vector3(0.7f,0.7f,0), 0.5f);
+            //transform.DOScale(new Vector3(0.7f,0.7f,0), 0.5f);
+            transform.DOScale(scale, 0.5f);
+            
             movObj.SetActive(false);
 
             ScrollInfinityManager.Instance.xoaItem(index);
