@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class lv8Controller : MonoBehaviour
@@ -17,10 +18,10 @@ public class lv8Controller : MonoBehaviour
     [SerializeField] List<GameObject> _boxSelected;
     [SerializeField] Transform _parent;
 
-    GameObject obj_click;
-    GameObject _bxSelec1;
-    GameObject _bxSelec2;
+    GameObject ie_lack;
     GameObject hoiCham;
+
+    int idSelect;
 
     // Start is called before the first frame update
     void Start()
@@ -46,30 +47,37 @@ public class lv8Controller : MonoBehaviour
         GameObject _iste_2 = Instantiate(_ie_2, _instanceObj[1].transform.position,Quaternion.identity,_parent);
         GameObject _iste_3 = Instantiate(_ie_1, _instanceObj[2].transform.position,Quaternion.identity,_parent);
         GameObject _iste_4 = Instantiate(_ie_2, _instanceObj[3].transform.position,Quaternion.identity,_parent);
-
+        
         _addInstanItem.Add(_iste_1);
         _addInstanItem.Add(_iste_2);
         _addInstanItem.Add(_iste_3);
         _addInstanItem.Add(_iste_4);
 
+
         int rd_i = Random.Range(0, _addInstanItem.Count);
-        obj_click = _addInstanItem[rd_i];
-        obj_click.SetActive(false);
-        hoiCham = Instantiate(_gameObjs[0],obj_click.transform.position,Quaternion.identity,_parent);
+        ie_lack = _addInstanItem[rd_i];
 
-        _bxSelec1 = Instantiate(_ie_1, _boxSelected[0].transform.position, Quaternion.identity, _parent);
-        _bxSelec2 = Instantiate(_ie_2, _boxSelected[1].transform.position, Quaternion.identity, _parent);
+        idSelect = ie_lack.GetComponent<SelectedItem>().id;
 
+        ie_lack.SetActive(false);
+        hoiCham = Instantiate(_gameObjs[0], ie_lack.transform.position,Quaternion.identity,_parent);
+
+       Instantiate(_ie_1, _boxSelected[0].transform.position, Quaternion.identity, _parent);
+       Instantiate(_ie_2, _boxSelected[1].transform.position, Quaternion.identity, _parent);
+
+       
     }
 
-    public void selectedItem()
+    public void selectedItem(int id)
     {
-      if(_bxSelec1 || _bxSelec2)
+        if(id == idSelect)
         {
-            obj_click.SetActive(true);
+            ie_lack.SetActive(true);
             hoiCham.SetActive(false);
+           
         }
-        Debug.Log("click");
+        Debug.Log(id);
+        Debug.Log(idSelect);
     }
- 
+
 }
