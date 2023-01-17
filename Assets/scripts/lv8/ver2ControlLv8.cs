@@ -16,18 +16,19 @@ public class ver2ControlLv8: MonoBehaviour
     [SerializeField] List<Sprite> _gameObjs;
     [SerializeField] List<Image> _instanceObj;
     [SerializeField] List<Image> _boxSelected;
-
+    [SerializeField] GameObject deer_;
     int idSelect;
-
-
+    int _hoiCham;
+    int _ranTrue;
     private void Start()
     {
-     
         ranItem();
     }
 
     public void ranItem()
     {
+        EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.batDau());
+        EmotionDeer.Instance.StartCoroutine(EmotionDeer.Instance.batDau());
         List<Sprite> _addSprite= new List<Sprite>();
         for (int i = 1; i < _gameObjs.Count; i++)
         {
@@ -49,21 +50,22 @@ public class ver2ControlLv8: MonoBehaviour
         _instanceObj[5].sprite = _addSprite[_ran_3];
 
 
-        int _hoiCham = Random.Range(0, _instanceObj.Count - 1);
+        _hoiCham = Random.Range(0, _instanceObj.Count - 1);
+        Debug.Log("count hoi cham ? : "+ _hoiCham);
+        Debug.Log("sprite hoi cham ? : "+ _instanceObj[_hoiCham].sprite.name);
 
-        int _ranTrue = Random.Range(0, 1);
+        _ranTrue = Random.Range(0, 1);
         _ranTrue = idSelect;
 
         _boxSelected[_ranTrue].sprite = _instanceObj[_hoiCham].sprite;
-        Debug.Log("id bx1 :  " + _boxSelected[_ranTrue].name);
+        Debug.Log("id bx1 :  " + _boxSelected[_ranTrue].sprite.name);
+        Debug.Log("id bx1 :  " + _boxSelected[_ranTrue]);
         Debug.Log("id bx1 image true:  " + _instanceObj[_hoiCham].sprite.name);
 
         _gameObjs.Remove(_instanceObj[_hoiCham].sprite);
         int _ran = Random.Range(1, _gameObjs.Count - 1);
         
         _boxSelected[_ranTrue == 0 ? 1 : 0].sprite = _instanceObj[_ran].sprite;
-
-      
         Debug.Log("id bx2:  " + _boxSelected[_ranTrue == 0 ? 1 : 0]);
         Debug.Log("name image false: " + _instanceObj[_ran].sprite.name);
 
@@ -75,9 +77,16 @@ public class ver2ControlLv8: MonoBehaviour
     {
         if (id == idSelect)
         {
-            _instanceObj[idSelect].sprite = _instanceObj[idSelect].sprite;
+            _instanceObj[_hoiCham].sprite = _boxSelected[idSelect].sprite;
+            EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.Completed());
+            EmotionDeer.Instance.StartCoroutine(EmotionDeer.Instance.Completed());
         }
-
+        else
+        {
+            EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.EmoFail());
+        }
+        Debug.Log(_instanceObj[_hoiCham].name);
+        Debug.Log(_instanceObj[idSelect].name);
         Debug.Log(idSelect);
         Debug.Log(id);
     }

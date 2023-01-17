@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class lv8Controller : MonoBehaviour
 {
@@ -13,71 +14,68 @@ public class lv8Controller : MonoBehaviour
         _instance= this;
     }
 
-    [SerializeField] List<GameObject> _gameObjs;
-    [SerializeField] List<GameObject> _instanceObj;
-    [SerializeField] List<GameObject> _boxSelected;
-    [SerializeField] Transform _parent;
-
-    GameObject ie_lack;
-    GameObject hoiCham;
+    [SerializeField] List<Sprite> _gameObjs;
+    [SerializeField] List<Image> _instanceObj;
+    [SerializeField] List<Image> _boxSelected;
 
     int idSelect;
-
-    // Start is called before the first frame update
-    void Start()
+    int _hoiCham;
+    int _ranTrue;
+    private void Start()
     {
         ranItem();
     }
-    List<GameObject> _addIe = new List<GameObject>();
-    List<GameObject> _addInstanItem = new List<GameObject>();
+
     public void ranItem()
     {
+        List<Sprite> _addSprite = new List<Sprite>();
         for (int i = 1; i < _gameObjs.Count; i++)
         {
-            _addIe.Add(_gameObjs[i]);
+            _addSprite.Add(_gameObjs[i]);
         }
 
-        int ran_1 = Random.Range(0, _addIe.Count);
-        GameObject _ie_1 = _addIe[ran_1];
-        _addIe.RemoveAt(ran_1);
-        int ran_2 = Random.Range(0, _addIe.Count);
-        GameObject _ie_2 = _addIe[ran_2];
+        int _ran_1 = Random.Range(0, _addSprite.Count);
+        _instanceObj[0].sprite = _addSprite[_ran_1];
+        _instanceObj[2].sprite = _addSprite[_ran_1];
+        _addSprite.RemoveAt(_ran_1);
 
-        GameObject _iste_1 = Instantiate(_ie_1, _instanceObj[0].transform.position,Quaternion.identity,_parent);
-        GameObject _iste_2 = Instantiate(_ie_2, _instanceObj[1].transform.position,Quaternion.identity,_parent);
-        GameObject _iste_3 = Instantiate(_ie_1, _instanceObj[2].transform.position,Quaternion.identity,_parent);
-        GameObject _iste_4 = Instantiate(_ie_2, _instanceObj[3].transform.position,Quaternion.identity,_parent);
-        
-        _addInstanItem.Add(_iste_1);
-        _addInstanItem.Add(_iste_2);
-        _addInstanItem.Add(_iste_3);
-        _addInstanItem.Add(_iste_4);
+        int _ran_2 = Random.Range(0, _addSprite.Count);
+        _instanceObj[1].sprite = _addSprite[_ran_2];
+        _instanceObj[3].sprite = _addSprite[_ran_2];
+    
+        _hoiCham = Random.Range(0, _instanceObj.Count - 1);
+        _instanceObj[_hoiCham].sprite = _gameObjs[0];
 
-
-        int rd_i = Random.Range(0, _addInstanItem.Count);
-        ie_lack = _addInstanItem[rd_i];
-
-        idSelect = ie_lack.GetComponent<SelectedItem>().id;
-
-        ie_lack.SetActive(false);
-        hoiCham = Instantiate(_gameObjs[0], ie_lack.transform.position,Quaternion.identity,_parent);
-
-       Instantiate(_ie_1, _boxSelected[0].transform.position, Quaternion.identity, _parent);
-       Instantiate(_ie_2, _boxSelected[1].transform.position, Quaternion.identity, _parent);
-
+        Debug.Log("count hoi cham ? : " + _hoiCham);
+        Debug.Log("sprite hoi cham ? : " + _instanceObj[_hoiCham].sprite.name);
        
+        _ranTrue = Random.Range(0, _boxSelected.Count -1);
+        //_ranTrue = idSelect;
+
+        _boxSelected[_ranTrue].sprite = _instanceObj[_hoiCham].sprite;
+        Debug.Log("id bx1 :  " + _boxSelected[_ranTrue].sprite.name);
+        Debug.Log("id bx1 :  " + _boxSelected[_ranTrue]);
+        Debug.Log("id bx1 image true:  " + _instanceObj[_hoiCham].sprite.name);
+
+        _gameObjs.Remove(_instanceObj[_hoiCham].sprite);
+        int _ran = Random.Range(1, _gameObjs.Count - 1);
+
+        _boxSelected[_ranTrue == 0 ? 1 : 0].sprite = _instanceObj[_ran].sprite;
+        Debug.Log("id bx2:  " + _boxSelected[_ranTrue == 0 ? 1 : 0]);
+        Debug.Log("name image false: " + _instanceObj[_ran].sprite.name);
+
     }
 
     public void selectedItem(int id)
     {
-        if(id == idSelect)
+        if (id == idSelect)
         {
-            ie_lack.SetActive(true);
-            hoiCham.SetActive(false);
-           
+            _instanceObj[_hoiCham].sprite = _boxSelected[idSelect].sprite;
         }
-        Debug.Log(id);
+        Debug.Log(_instanceObj[_hoiCham].sprite.name);
+        Debug.Log(_instanceObj[idSelect].sprite.name);
         Debug.Log(idSelect);
+        Debug.Log(id);
     }
 
 }
