@@ -12,7 +12,6 @@ namespace Assets.scripts
 
         public GameObject movePositon;
         public Vector3 dropPosition;
-
         Vector3 oldPosition;
 
         private void Start()
@@ -39,12 +38,10 @@ namespace Assets.scripts
             //Add the trigger entry
             trigger.triggers.Add(entry1);
 
-            transform.DOMove(movePositon.transform.position, 1f).OnComplete(() =>
+            transform.DOMove(movePositon.transform.position, .7f).OnComplete(() =>
             {
                 oldPosition = transform.position;
             });
-
-
         }
 
         private void OnDropDelegate(PointerEventData data)
@@ -53,15 +50,21 @@ namespace Assets.scripts
             if (Vector2.Distance(dropPosition, transform.position) < 3)
             {
                 Debug.Log(dropPosition);
-                transform.DOMove(dropPosition, 1);
+               
+                transform.DOScale(Vector3.zero, .1f).OnComplete(() =>
+                {
+                    transform.DOMove(dropPosition, .01f);
+                    transform.DOScale(Vector3.one, .2f);
+                });
+                
                 GetComponent<Image>().raycastTarget = false;
-
                 creamsController.Instance.AddCount();
-
+    
+                
             }
             else
             {
-                transform.DOMove(oldPosition, 1);
+                transform.DOMove(oldPosition, .5f);
             }
 
         }

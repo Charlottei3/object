@@ -65,33 +65,31 @@ MonoBehaviour:
   gameLv2:
   - Ngua: {fileID: 21300000, guid: a65deffb70f1f584fbe293aba7e909c8, type: 3}
     hinhNho: {fileID: 21300000, guid: 0966bf5fed8c89e41a85b94f529b7072, type: 3}
-    wolfoo: {fileID: 21300000, guid: 17d28f9f71a867c438fb021f98ffc34a, type: 3}
+    wolfoo: {fileID: 5917693771315323268, guid: 6a0db64db90c72b46ad9e8149f1479db, type: 3}
     bong: {fileID: 21300000, guid: 8676b40e85b48ad419aec5a39b2510eb, type: 3}
     cot: {fileID: 21300000, guid: f69e62cc3f7375b4793c300e4eb27fbf, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
   - Ngua: {fileID: 21300000, guid: f358de761510fec4ca64717cf1bfef9a, type: 3}
     hinhNho: {fileID: 21300000, guid: 8bc15bdc97e37de47b8cde9b2901b11a, type: 3}
-    wolfoo: {fileID: 21300000, guid: d63db0fe45bcfc64c8573b0b27c5d62e, type: 3}
+    wolfoo: {fileID: 6045422109385063635, guid: d77d8fbcfdc685347a27b9ccf745a40a, type: 3}
     bong: {fileID: 21300000, guid: c3c575a9dd9c60043816f451c5e0ccf0, type: 3}
     cot: {fileID: 21300000, guid: bbfd423d868998a488bc4c1a76e886e3, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
   - Ngua: {fileID: 21300000, guid: d76106321cd52f547b272e1d9c58fc18, type: 3}
     hinhNho: {fileID: 21300000, guid: a340320bb7d6c144f9cb90bbcf7ad19e, type: 3}
-    wolfoo: {fileID: 21300000, guid: 98ec49e3441d337469ca49796d681ade, type: 3}
+    wolfoo: {fileID: 4976203048019403421, guid: 635cc34969c71674bac7783ceb8398d8, type: 3}
     bong: {fileID: 21300000, guid: 10d8e2db37ffc624e97f939ce465d4a2, type: 3}
     cot: {fileID: 21300000, guid: 5e3c9c83a4efcac4b8c92407f7903276, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
   - Ngua: {fileID: 21300000, guid: baee19f1ec875b942ad1b90e41e46bba, type: 3}
     hinhNho: {fileID: 21300000, guid: 7dc3ce5918284e84ea0f82a3cec51535, type: 3}
-    wolfoo: {fileID: 21300000, guid: 932149f63211b4c4b8ed919f97e58e3f, type: 3}
+    wolfoo: {fileID: 2365977755576230431, guid: e27dd229d059f81488b395b718548e04, type: 3}
     bong: {fileID: 21300000, guid: 977752247f2b08c49bccca53adbf08ea, type: 3}
     cot: {fileID: 21300000, guid: 8a7d862c4df383a4b82eeafac4fd0dda, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
   - Ngua: {fileID: 21300000, guid: 2f8edba33cd291344820ca0d6162f86b, type: 3}
     hinhNho: {fileID: 21300000, guid: c8ac4d6cd02479242aae5c9d8e7995a6, type: 3}
-    wolfoo: {fileID: 21300000, guid: cc4cad628bb1f904ebad7a965c46faf8, type: 3}
+    wolfoo: {fileID: 176316728704825293, guid: 55e94018b806d264aa284e6ae632801b, type: 3}
     bong: {fileID: 21300000, guid: 0b8ed3fea1c48e34285b0c9ac97204d0, type: 3}
     cot: {fileID: 21300000, guid: a60da5fd0091cbc46ac170020a172cab, type: 3}
     dropPosition: {x: 0, y: 0, z: 0}
-  item_Noels:
-  - listSprite: []

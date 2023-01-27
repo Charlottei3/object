@@ -35,14 +35,14 @@ public class creamsController : MonoBehaviour
          for (int i = 3; i < 6; i++)//body
          {
             int random = Random.Range(0, tempIceCreams.Count);
-             IceCreamColor iceCream = tempIceCreams[random];
+            IceCreamColor iceCream = tempIceCreams[random];
 
-             iceCream.dropPosition = step.objects[i + 3].transform.position;//net position
-             choosenIceCreams.Add(iceCream);
+            iceCream.dropPosition = step.objects[i + 3].transform.position;//net position
+            choosenIceCreams.Add(iceCream);
+            
+            step.objects[i].GetComponent<Image>().sprite = iceCream.Body;
 
-             step.objects[i].GetComponent<Image>().sprite = iceCream.Body;
-
-             tempIceCreams.RemoveAt(random);
+            tempIceCreams.RemoveAt(random);
 
             Debug.Log("REMOVE: " + iceCream.Body.name);
             string lists = "";
@@ -79,6 +79,7 @@ public class creamsController : MonoBehaviour
         }
       
     }
+     
 
     public void AddCount()
     {

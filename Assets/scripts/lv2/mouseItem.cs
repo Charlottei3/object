@@ -24,36 +24,35 @@ namespace Assets.scripts {
             entry.callback.AddListener((data) => { OnDragDelegate((PointerEventData)data); });
             trigger.triggers.Add(entry);
 
-
             EventTrigger.Entry entry1 = new EventTrigger.Entry();
-            entry1.eventID = EventTriggerType.Drop;
+            entry1.eventID = EventTriggerType.PointerUp;
             entry1.callback.AddListener((data) => { OnDropDelegate((PointerEventData)data); });
             trigger.triggers.Add(entry1);
 
 
-            transform.DOMove(movePositon.transform.position, 1f).OnComplete(() =>
+            transform.DOMove(movePositon.transform.position, .7f).OnComplete(() =>
             {
                 oldPosition = transform.position;
             });
-
         }
 
         private void OnDropDelegate(PointerEventData data)
         {
             if (Vector2.Distance(dropPosition, transform.position) < 2)
             {
-                Debug.Log(dropPosition);
-                transform.DOMove(dropPosition, 1);
+              
+                transform.DOMove(dropPosition, .4f);
 
                 GetComponent<Image>().raycastTarget = false;
 
                 lv2GameController.Instance.AddCount();
-
+              
             }
             else
             {
-                transform.DOMove(oldPosition, 1);
+                transform.DOMove(oldPosition, .5f);
             }
+
         }
 
         public void OnDragDelegate(PointerEventData data)

@@ -29,7 +29,7 @@ public class GameplayResources : ScriptableObject
     [Header("Level 2")]
     public List<nguaLv2> gameLv2;
 
-    public List<item_noel> item_Noels;
+    
 
 }
 [Serializable]
@@ -51,7 +51,7 @@ public struct nguaLv2
 {
     public Sprite Ngua;
     public Sprite hinhNho;
-    public Sprite wolfoo;
+    public GameObject wolfoo;
     public Sprite bong;
     public Sprite cot;
    
@@ -60,11 +60,3 @@ public struct nguaLv2
 }
 
 
-
-[Serializable]
-
-public struct item_noel
-{
-    public List<Sprite> listSprite;
-  
-}

@@ -16,7 +16,7 @@ public class lv2GameController : MonoBehaviour
     [SerializeField] List<Steplv2> steps;
     int index;
 
-    public int Countlv2;
+    int Countlv2;
 
     List<nguaLv2> itemNgua = new List<nguaLv2>();
     List<nguaLv2> chooseItem = new List<nguaLv2>();
@@ -94,7 +94,7 @@ public class lv2GameController : MonoBehaviour
     {
         index++;
 
-        if(index == 1)
+        if (index == 1)
         {
 
             Steplv2 step = steps[index];
@@ -119,7 +119,8 @@ public class lv2GameController : MonoBehaviour
                 nguaLv2 i_dia = ngauItemData[ranDia];
                 imgDiamond.sprite = i_dia.hinhNho;
 
-                imgDiamond.GetComponent<mouseItem>().dropPosition = i_dia.dropPosition;
+                //imgDiamond.GetComponent<mouseItem>().dropPosition = i_dia.dropPosition;
+                imgDiamond.GetComponent<imageSmall>().dropPosition = i_dia.dropPosition;
 
                 ngauItemData.Remove(i_dia);
             }
@@ -145,12 +146,12 @@ public class lv2GameController : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 step.objects[i].SetActive(true);
-                Image i_woolfol = step.objects[i].GetComponent<Image>();
+                GameObject i_woolfol = step.objects[i].GetComponent<GameObject>();
                 int ran_woofol = Random.Range(0, ngauItemData.Count - 1);
                 nguaLv2 _wool = ngauItemData[ran_woofol];
-                i_woolfol.sprite = _wool.wolfoo;
+                i_woolfol = _wool.wolfoo;
 
-                i_woolfol.GetComponent<mouseItem>().dropPosition = _wool.dropPosition;
+                //i_woolfol.GetComponent<charControl>().dropPosition = _wool.dropPosition;
                 Debug.Log(_wool.dropPosition);
                 ngauItemData.Remove(_wool);
             }
@@ -175,12 +176,13 @@ public class lv2GameController : MonoBehaviour
                 step.objects[i].SetActive(true);
                 step.objects[i + 6].SetActive(true);
                 
-                Image ballon = step.objects[i].GetComponent<Image>();
+                Image ballon_ = step.objects[i].GetComponent<Image>();
                 int ran_ballon = Random.Range(0, bogItemData.Count - 1);
                 nguaLv2 _ballon = bogItemData[ran_ballon];
-                ballon.sprite = _ballon.bong;
+                ballon_.sprite = _ballon.bong;
 
-                ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition;
+                //ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition;
+                ballon_.GetComponent<ballon>().dropPosition = _ballon.dropPosition;
                 //step.objects[i + 3].SetActive(false);
                 bogItemData.Remove(_ballon);
                
