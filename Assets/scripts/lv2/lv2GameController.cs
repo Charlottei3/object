@@ -76,8 +76,6 @@ public class lv2GameController : MonoBehaviour
 
             }
         }
-
-
     }
 
     public void AddCount()
@@ -128,7 +126,6 @@ public class lv2GameController : MonoBehaviour
 
         if (index == 2)
         {
-            
             Steplv2 step = steps[index];
             List<nguaLv2> ngauItemData = new List<nguaLv2>();
 
@@ -137,7 +134,7 @@ public class lv2GameController : MonoBehaviour
                 nguaLv2 i_woofol = chooseItem[i];
                 i_woofol.dropPosition = steps[index].objects[i + 3].transform.position;
 
-
+                Debug.Log(i_woofol.dropPosition);
                 ngauItemData.Add(i_woofol);
 
                 Debug.Log(i_woofol.wolfoo.name);
@@ -146,14 +143,24 @@ public class lv2GameController : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 step.objects[i].SetActive(true);
+                
                 GameObject i_woolfol = step.objects[i].GetComponent<GameObject>();
                 int ran_woofol = Random.Range(0, ngauItemData.Count - 1);
                 nguaLv2 _wool = ngauItemData[ran_woofol];
-                i_woolfol = _wool.wolfoo;
 
-                //i_woolfol.GetComponent<charControl>().dropPosition = _wool.dropPosition;
+                i_woolfol = _wool.wolfoo;
+             
+                Instantiate(_wool.wolfoo, step.objects[i].transform.position,Quaternion.identity, step.objects[i].transform);
+
+                Debug.Log(i_woolfol);
+                Debug.Log(i_woolfol.transform.GetChild(0).GetComponent<charControl>());
+
+                //i_woolfol.transform.GetChild(i).GetComponent<charControl>().dropPosition = _wool.dropPosition;
+                _wool.wolfoo.transform.GetChild(0).GetComponent<charControl>().dropPosition = _wool.dropPosition;
+                Debug.Log(_wool.wolfoo.transform.GetChild(0));
                 Debug.Log(_wool.dropPosition);
                 ngauItemData.Remove(_wool);
+                
             }
         }
 
@@ -165,7 +172,7 @@ public class lv2GameController : MonoBehaviour
             for (int i = 0; i < chooseItem.Count; i++)
             {
                 nguaLv2 i_ballon = chooseItem[i];
-                i_ballon.dropPosition = steps[index].objects[i + 3].transform.position;
+                //i_ballon.dropPosition = steps[index].objects[i + 3].transform.position;
 
                 bogItemData.Add(i_ballon);
                 Debug.Log(chooseItem[i].bong.name);
@@ -174,23 +181,19 @@ public class lv2GameController : MonoBehaviour
             for (int i = 0; i < 3; i++)
             {
                 step.objects[i].SetActive(true);
-                step.objects[i + 6].SetActive(true);
+                //step.objects[i + 6].SetActive(true);
                 
                 Image ballon_ = step.objects[i].GetComponent<Image>();
                 int ran_ballon = Random.Range(0, bogItemData.Count - 1);
                 nguaLv2 _ballon = bogItemData[ran_ballon];
                 ballon_.sprite = _ballon.bong;
 
-                //ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition;
+                //ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition; 
                 ballon_.GetComponent<ballon>().dropPosition = _ballon.dropPosition;
                 //step.objects[i + 3].SetActive(false);
                 bogItemData.Remove(_ballon);
                
             }
-
         }
-
     }
-
-   
 }

@@ -10,14 +10,22 @@ using UnityEngine.EventSystems;
 
 public class charControl : MonoBehaviour
 {
+    private static charControl _instance;
+    public static charControl Instance { get { return _instance; } }
+
+    private void Awake()
+    {
+        _instance = this; 
+    }
+
     AnimationSpineController spineControl;
     [SerializeField] AnimationSpineController.SpineAnim anim;
     [SerializeField] AnimationSpineController.SpineAnim animOnPle;
     [SerializeField] AnimationSpineController.SpineAnim animIdle;
 
     [SerializeField] private DragObject character;
-    [SerializeField] private GameObject movePos;
-    [SerializeField] private GameObject movObj;
+    [SerializeField] private GameObject bong;
+    [SerializeField] public GameObject bongPos;
  
 
     public Vector3 dropPosition;
@@ -26,12 +34,12 @@ public class charControl : MonoBehaviour
     {
         spineControl = GetComponent<AnimationSpineController>();
         spineControl.InitValue();
-      
+
 
         character.Init();
         Master.AddEventTriggerListener(gameObject.GetComponent<EventTrigger>(), EventTriggerType.PointerUp, onDrop);
 
-        transform.DOMove(movePos.transform.position, .7f).OnComplete(() =>
+        transform.DOMoveY(-6f, .7f).OnComplete(() =>
         {
             oldPosition = transform.position;
         });
@@ -39,16 +47,19 @@ public class charControl : MonoBehaviour
 
     private void onDrop(BaseEventData arg0)
     {
-        if (Vector2.Distance(movObj.transform.position, transform.position) < 3)
+        if (Vector2.Distance(dropPosition, transform.position) < 3)
         {
-            transform.DOMove(movObj.transform.position, 0.5f);
+            transform.DOMove(dropPosition, 0.5f).OnComplete(() =>
+            {
+                bong.SetActive(true);
+            });
 
+            Debug.Log(dropPosition);
             lv2GameController.Instance.AddCount();
-          
         }
         else
         {
-            transform.DOMove(oldPosition, 0.5f);
+            transform.DOMove(oldPosition, 0.2f);
         }
     }
 }

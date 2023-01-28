@@ -28,9 +28,6 @@ public class GameplayResources : ScriptableObject
 
     [Header("Level 2")]
     public List<nguaLv2> gameLv2;
-
-    
-
 }
 [Serializable]
 public struct IceCreamColor
