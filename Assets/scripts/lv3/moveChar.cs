@@ -17,7 +17,7 @@ public class moveChar : DragObject
         [SerializeField] AnimationSpineController.SpineAnim animIdle;
         [SerializeField] UIBox box;
 
-       
+         [SerializeField] private GameObject _charScale;
         public TypeBox type;
 
         public float move;
@@ -33,7 +33,7 @@ public class moveChar : DragObject
 
             spineControl = GetComponent<AnimationSpineController>();
             spineControl.InitValue();
-
+            //_charScale.transform.DOScale(Vector3.zero, 0);
             transform.DOMove(movePosition.transform.position, move).OnComplete(() =>
             {
 
@@ -52,14 +52,20 @@ public class moveChar : DragObject
         if (Vector2.Distance(box.transform.position, transform.position) < 2)
         {
             Debug.Log(transform.gameObject);
-            if (type == TypeBox.red || type == TypeBox.pink || type == TypeBox.blue)
-            {
-                transform.DOMove(box.gameObject[0].transform.position, 0.5f);
-            }
-            else
-            {
-                transform.DOMove(box.gameObject[1].transform.position, 0.5f);
-            }
+            /* if (type == TypeBox.red || type == TypeBox.pink || type == TypeBox.blue)
+             {
+                 transform.DOMove(box.gameObject[0].transform.position, 0.5f);
+             }
+             else
+             {
+                 transform.DOMove(box.gameObject[1].transform.position, 0.5f);
+             }*/
+            transform.DOMove(box.transform.position, .1f);
+            transform.DOScale(Vector3.zero, .2f).OnComplete(() =>
+           {
+               _charScale.transform.DOScale(Vector3.one, .15f);
+               StartCoroutine(SpineAnimv4.Instance.ScaleOn());
+           });
         }
         else
         {
@@ -67,22 +73,16 @@ public class moveChar : DragObject
         }
 
     }
-
-
         IEnumerator moveSpin()
         {
-
             spineControl.PlayAnimation(anim, true);
             transform.DOMove(movePosition.transform.position, move).OnComplete(() =>
             {
                 spineControl.PlayAnimation(animOnPle, true);
                 olPoisition = transform.position;
             });
-
             yield return new WaitForSeconds(2 * move);
             spineControl.PlayAnimation(animIdle, true);
         
         }
-
-
 }

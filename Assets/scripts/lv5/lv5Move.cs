@@ -21,6 +21,8 @@ public class lv5Move : MonoBehaviour
         transform.DOMove(movePos.transform.position, 1f);
 
         Master.AddEventTriggerListener(gameObject.GetComponent<EventTrigger>(), EventTriggerType.PointerUp, OnDrop);
+
+        //movObj = CharBallon.Instance.
     }
 
     private void OnDrop(BaseEventData arg0)
@@ -33,6 +35,8 @@ public class lv5Move : MonoBehaviour
 
             lv5Controller.Instance.AddCount();
             movObj.SetActive(false);
+
+            CharBallon.Instance.SetBallon();
         }
         else
         {

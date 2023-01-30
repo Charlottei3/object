@@ -18,6 +18,8 @@ public class moveLv4 : MonoBehaviour
 
     [SerializeField] private DragObject character;
 
+    [SerializeField] private GameObject _charScale;
+
     public GameObject movePosition;
     Vector3 olPoisition;
     public Vector3 dropPosition;
@@ -27,7 +29,7 @@ public class moveLv4 : MonoBehaviour
         spineControl = GetComponent<AnimationSpineController>();
         spineControl.InitValue();
 
-        
+        _charScale.transform.DOScale(Vector3.zero, 0);
         character.Init();
         OnMove();   
         StartCoroutine(moveSpin());
@@ -45,11 +47,14 @@ public class moveLv4 : MonoBehaviour
 
         if (Vector2.Distance(box.transform.position, transform.position) < 2)
         {
-            transform.DOJump(box.transform.position, 2f, 1, 0.5f).OnComplete(()=>
+            transform.DOMove(box.transform.position, .1f);
+            transform.DOScale(Vector3.zero, .15f).OnComplete(()=>
             {
                 lv4Controller.Instance.AddCount();
-
+                _charScale.transform.DOScale(Vector3.one, .2f);
+                StartCoroutine(SpineAnimv4.Instance.ScaleOn());
             });
+           
             transform.SetParent(lv4Controller.Instance.pos.transform);
         }
         else

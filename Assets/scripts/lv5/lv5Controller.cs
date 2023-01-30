@@ -10,7 +10,7 @@ public class lv5Controller : MonoBehaviour
     [SerializeField] List<Step> _steps;
 
     [SerializeField] List<GameObject> posItem;//pos
-    [SerializeField] GameObject[] rabalon;//gamobj
+    [SerializeField] List<GameObject> rabalon;//gamobj
 
     int index;
     int idex;
@@ -48,7 +48,6 @@ public class lv5Controller : MonoBehaviour
         {
             lv6Step();
             Count = 0;
-
         }
     }
 
@@ -103,7 +102,7 @@ public class lv5Controller : MonoBehaviour
         List<GameObject> tempIm = new List<GameObject>();
         tempIm.AddRange(posItem);
 
-        for (int i = 0; i < rabalon.Length; i++)
+        for (int i = 0; i < rabalon.Count; i++)
         {
             GameObject cd = rabalon[i];
 
