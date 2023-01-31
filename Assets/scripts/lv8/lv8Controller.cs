@@ -63,7 +63,6 @@ public class lv8Controller : MonoBehaviour
         _boxSelected[_ranTrue == 0 ? 1 : 0].sprite = _instanceObj[_ran].sprite;
         Debug.Log("id bx2:  " + _boxSelected[_ranTrue == 0 ? 1 : 0]);
         Debug.Log("name image false: " + _instanceObj[_ran].sprite.name);
-
     }
 
     public void selectedItem(int id)

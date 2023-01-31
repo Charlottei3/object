@@ -22,8 +22,7 @@ public class lv5Controller : MonoBehaviour
     }
     void Start()
     {
-        ranIcon();
-        
+        //ranIcon();
     }
 
     public void AddCount()
@@ -85,6 +84,14 @@ public class lv5Controller : MonoBehaviour
         }
         
          if (idex == 2)
+        {
+            Step step = _steps[idex];
+            for (int i = 0; i < step.objects.Length; i++)
+            {
+                step.objects[i].SetActive(true);
+            }
+        }
+        if (idex == 3)
         {
             Step step = _steps[idex];
             for (int i = 0; i < step.objects.Length; i++)

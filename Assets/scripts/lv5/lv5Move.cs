@@ -33,10 +33,11 @@ public class lv5Move : MonoBehaviour
             transform.DORotate(movObj.transform.eulerAngles, 1);
             GetComponent<Image>().raycastTarget = false;
 
-            lv5Controller.Instance.AddCount();
+            //lv5Controller.Instance.AddCount();
+            lv5Controller.Instance.countLv6();
             movObj.SetActive(false);
 
-            CharBallon.Instance.SetBallon();
+            //CharBallon.Instance.SetBallon();
         }
         else
         {

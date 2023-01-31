@@ -59,14 +59,13 @@ namespace Assets.scripts
                 
                 GetComponent<Image>().raycastTarget = false;
                 creamsController.Instance.AddCount();
-    
-                
+
+                SCN.Tutorial.TutorialManager.Instance.Stop();
             }
             else
             {
                 transform.DOMove(oldPosition, .5f);
             }
-
         }
 
         public void OnDragDelegate(PointerEventData data)

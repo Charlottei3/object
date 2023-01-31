@@ -31,10 +31,6 @@ public class CharBallon : MonoBehaviour
     public void SetBallon()
     {
         index++;
-       /* for (int i = 0; i < ballon.Count; i++)
-        {
-            ballon[i].SetActive(true);
-        }*/
         ballon[index].SetActive(true);
 
     }

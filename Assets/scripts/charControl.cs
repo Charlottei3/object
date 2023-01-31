@@ -35,7 +35,6 @@ public class charControl : MonoBehaviour
         spineControl = GetComponent<AnimationSpineController>();
         spineControl.InitValue();
 
-
         character.Init();
         Master.AddEventTriggerListener(gameObject.GetComponent<EventTrigger>(), EventTriggerType.PointerUp, onDrop);
 
@@ -49,7 +48,7 @@ public class charControl : MonoBehaviour
     {
         if (Vector2.Distance(dropPosition, transform.position) < 3)
         {
-            transform.DOMove(dropPosition, 0.5f).OnComplete(() =>
+            transform.DOMove(dropPosition, .5f).OnComplete(() =>
             {
                 bong.SetActive(true);
             });
@@ -59,7 +58,7 @@ public class charControl : MonoBehaviour
         }
         else
         {
-            transform.DOMove(oldPosition, 0.2f);
+            transform.DOMove(oldPosition, .2f);
         }
     }
 }

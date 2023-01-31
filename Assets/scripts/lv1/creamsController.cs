@@ -1,5 +1,6 @@
 using Assets.scripts;
 using DG.Tweening;
+using SCN.Tutorial;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -74,10 +75,9 @@ public class creamsController : MonoBehaviour
                 img.GetComponent<Item>().dropPosition = iceCreamColor.dropPosition;
 
                 IceCreamColorData.Remove(iceCreamColor);
-               
+
             }
         }
-      
     }
      
 
@@ -123,10 +123,7 @@ public class creamsController : MonoBehaviour
                 Debug.Log("UPDATE POSITION 2: " + iceCreamColor.dropPosition);
 
                 IceCreamColorData.Remove(iceCreamColor);
-
-               
             }
-
         }
 
         if (index == 2)

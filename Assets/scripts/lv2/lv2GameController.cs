@@ -51,8 +51,6 @@ public class lv2GameController : MonoBehaviour
 
 
             itemNgua.RemoveAt(random);
-            
-
         }
 
         if (index == 0)
@@ -187,7 +185,7 @@ public class lv2GameController : MonoBehaviour
                 int ran_ballon = Random.Range(0, bogItemData.Count - 1);
                 nguaLv2 _ballon = bogItemData[ran_ballon];
                 ballon_.sprite = _ballon.bong;
-
+                
                 //ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition; 
                 ballon_.GetComponent<ballon>().dropPosition = _ballon.dropPosition;
                 //step.objects[i + 3].SetActive(false);
