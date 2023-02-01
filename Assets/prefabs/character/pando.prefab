@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ed29a1aa4f4e246a2d822d6dea729a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPosition: {x: 0, y: 0, z: 0}
   anim:
     animName: 
     eventTime: []
@@ -149,7 +150,6 @@ MonoBehaviour:
   character: {fileID: 176316728704825295}
   bong: {fileID: 4640571235885784505}
   bongPos: {fileID: 4640571234778567071}
-  dropPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &176316728704825293
 GameObject:
   m_ObjectHideFlags: 0

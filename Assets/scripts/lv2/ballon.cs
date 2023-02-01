@@ -28,13 +28,15 @@ public class ballon : MonoBehaviour
         {
             oldPosition = transform.position;
         });
+
+        dropPosition = charControl.Instance.bongPos.transform.position;
     }
     private void OnDrop(BaseEventData arg0)
     {
-        if (Vector2.Distance(charControl.Instance.bongPos.transform.position, transform.position) < 2)
+        if (Vector2.Distance(dropPosition, transform.position) < 2)
         {
             //GetComponent<Image>().raycastTarget = false;
-            transform.DOMove(charControl.Instance.bongPos.transform.position, .001f);
+            transform.DOMove(dropPosition, .1f);
             transform.DORotate(charControl.Instance.bongPos.transform.eulerAngles, .3f);
             
             transform.DOScale(new Vector3(.6f, .6f, .6f), .5f);
@@ -44,5 +46,8 @@ public class ballon : MonoBehaviour
         {
             transform.DOMove(oldPosition, .5f);
         }
+        Debug.Log("drop position : " + dropPosition);
+        Debug.Log("anh bong : " + charControl.Instance.bongPos.transform.position);
+        
     }
 }

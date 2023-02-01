@@ -10,6 +10,9 @@ using UnityEngine.EventSystems;
 
 public class charControl : MonoBehaviour
 {
+    public Vector3 dropPosition;
+    Vector3 oldPosition;
+
     private static charControl _instance;
     public static charControl Instance { get { return _instance; } }
 
@@ -26,10 +29,7 @@ public class charControl : MonoBehaviour
     [SerializeField] private DragObject character;
     [SerializeField] private GameObject bong;
     [SerializeField] public GameObject bongPos;
- 
 
-    public Vector3 dropPosition;
-    Vector3 oldPosition;
     void Start()
     {
         spineControl = GetComponent<AnimationSpineController>();

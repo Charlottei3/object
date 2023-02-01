@@ -193,7 +193,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 72cb00d4bdb04454bbc745ea1f521610, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -399,7 +399,7 @@ MonoBehaviour:
   initialSkinName: Shinigami
   initialFlipX: 1
   initialFlipY: 0
-  startingAnimation: Run_Hold
+  startingAnimation: Run_Forward
   startingLoop: 1
   timeScale: 1
   freeze: 0
@@ -432,7 +432,7 @@ GameObject:
   - component: {fileID: 1989193681663236535}
   - component: {fileID: 1989193681663236489}
   - component: {fileID: 1989193681663236534}
-  - component: {fileID: 1989193681663236488}
+  - component: {fileID: 4823924647744132421}
   m_Layer: 5
   m_Name: beal
   m_TagString: Untagged
@@ -447,19 +447,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989193681663236532}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 0.75602305, w: 0.654545}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1989193681872517669}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 98.23}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 190, y: 159}
+  m_AnchoredPosition: {x: 164.85767, y: 219.69452}
   m_SizeDelta: {x: 160, y: 216}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.4, y: 0.8}
 --- !u!222 &1989193681663236489
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -498,26 +498,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!95 &1989193681663236488
-Animator:
-  serializedVersion: 4
+--- !u!114 &4823924647744132421
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1989193681663236532}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: f64e6e6b75ba07d4eb61aa528fe76c4d, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_StabilizeFeet: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42a195b47491d34b9bcbc40898bcb29, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  skeletonGraphic: {fileID: 1989193681399852670}
+  initializeOnAwake: 1
+  boneName: bantay_phai
+  followBoneRotation: 0
+  followSkeletonFlip: 0
+  followLocalScale: 0
+  followXYPosition: 1
+  followZPosition: 1
+  maintainedAxisOrientation: 1
 --- !u!1 &1989193681872517666
 GameObject:
   m_ObjectHideFlags: 0
@@ -724,7 +725,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 6830f6cd241a8d54b873aa800e30f84f, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 

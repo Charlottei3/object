@@ -192,6 +192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ed29a1aa4f4e246a2d822d6dea729a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dropPosition: {x: 0, y: 0, z: 0}
   anim:
     animName: 
     eventTime: []
@@ -204,7 +205,6 @@ MonoBehaviour:
   character: {fileID: 4976203048019403423}
   bong: {fileID: 1032288309122694726}
   bongPos: {fileID: 1032288308082422368}
-  dropPosition: {x: 0, y: 0, z: 0}
 --- !u!1001 &3001236805275466354
 PrefabInstance:
   m_ObjectHideFlags: 0

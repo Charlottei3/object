@@ -99,13 +99,10 @@ public class lv5Controller : MonoBehaviour
                 step.objects[i].SetActive(true);
             }
         }
-        
-
     }
 
     public void ranIcon()
     {
-
         List<GameObject> tempIm = new List<GameObject>();
         tempIm.AddRange(posItem);
 
@@ -119,7 +116,6 @@ public class lv5Controller : MonoBehaviour
             tempIm.RemoveAt(_ranIm);
 
         }
-
     }
 
 }

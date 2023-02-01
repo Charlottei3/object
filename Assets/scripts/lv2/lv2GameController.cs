@@ -148,14 +148,15 @@ public class lv2GameController : MonoBehaviour
 
                 i_woolfol = _wool.wolfoo;
              
-                Instantiate(_wool.wolfoo, step.objects[i].transform.position,Quaternion.identity, step.objects[i].transform);
+                Instantiate(i_woolfol, step.objects[i].transform.position,Quaternion.identity, step.objects[i].transform);
 
                 Debug.Log(i_woolfol);
                 Debug.Log(i_woolfol.transform.GetChild(0).GetComponent<charControl>());
 
                 //i_woolfol.transform.GetChild(i).GetComponent<charControl>().dropPosition = _wool.dropPosition;
-                _wool.wolfoo.transform.GetChild(0).GetComponent<charControl>().dropPosition = _wool.dropPosition;
-                Debug.Log(_wool.wolfoo.transform.GetChild(0));
+                i_woolfol.transform.GetChild(0).GetComponent<charControl>().dropPosition = _wool.dropPosition;
+              
+                Debug.Log(i_woolfol.transform.GetChild(0).name);
                 Debug.Log(_wool.dropPosition);
                 ngauItemData.Remove(_wool);
                 
@@ -185,9 +186,9 @@ public class lv2GameController : MonoBehaviour
                 int ran_ballon = Random.Range(0, bogItemData.Count - 1);
                 nguaLv2 _ballon = bogItemData[ran_ballon];
                 ballon_.sprite = _ballon.bong;
-                
+
                 //ballon.GetComponent<mouseItem>().dropPosition = _ballon.dropPosition; 
-                ballon_.GetComponent<ballon>().dropPosition = _ballon.dropPosition;
+                //ballon_.GetComponent<ballon>().dropPosition = _ballon.dropPosition;
                 //step.objects[i + 3].SetActive(false);
                 bogItemData.Remove(_ballon);
                
