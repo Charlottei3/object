@@ -25,6 +25,8 @@ public class EmotionDeer : MonoBehaviour
     {
         spineControl = GetComponent<AnimationSpineController>();
         spineControl.InitValue();
+
+        StartCoroutine(nameof(batDau));
     }
 
     public IEnumerator batDau()
@@ -40,7 +42,7 @@ public class EmotionDeer : MonoBehaviour
     {
         spineControl.PlayAnimation(animOnPle, true);
 
-        transform.DOMove(movPos.transform.position,5).OnComplete(() =>
+        transform.DOMove(movPos.transform.position,4).OnComplete(() =>
         {
             spineControl.PlayAnimation(animketThuc, true);
 

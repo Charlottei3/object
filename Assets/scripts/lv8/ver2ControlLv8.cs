@@ -27,8 +27,8 @@ public class ver2ControlLv8: MonoBehaviour
 
     public void ranItem()
     {
-        EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.batDau());
-        EmotionDeer.Instance.StartCoroutine(EmotionDeer.Instance.batDau());
+ 
+
         List<Sprite> _addSprite= new List<Sprite>();
         for (int i = 1; i < _gameObjs.Count; i++)
         {

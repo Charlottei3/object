@@ -16,6 +16,7 @@ public class SpineAnimv4 : MonoBehaviour
     AnimationSpineController spineControl;
     [SerializeField] AnimationSpineController.SpineAnim animScaleOn;
     [SerializeField] AnimationSpineController.SpineAnim animIdle;
+    [SerializeField] AnimationSpineController.SpineAnim aniDq;
     void Start()
     {
         spineControl = GetComponent<AnimationSpineController>();
@@ -30,5 +31,13 @@ public class SpineAnimv4 : MonoBehaviour
         yield return new WaitForSeconds(2);
         spineControl.PlayAnimation(animIdle, true);
 
+    }
+
+    public IEnumerator duQuayAni()
+    {
+
+        spineControl.PlayAnimation(aniDq, true);
+
+        yield return null;
     }
 }

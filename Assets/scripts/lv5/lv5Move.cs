@@ -13,6 +13,7 @@ public class lv5Move : MonoBehaviour
     [SerializeField] DragObject dragObjects;
     [SerializeField] private GameObject movePos;
     [SerializeField] private GameObject movObj;
+    [SerializeField] private GameObject img;
 
     void Start()
     {
@@ -29,8 +30,12 @@ public class lv5Move : MonoBehaviour
     {
         if (Vector2.Distance(movObj.transform.position, transform.position) < 2)
         {
-            transform.DOMove(movObj.transform.position, 0.5f);
-            transform.DORotate(movObj.transform.eulerAngles, 1);
+           
+            transform.DOScale(Vector3.zero, .2f);
+            img.transform.DOScale(Vector3.one, .15f);
+
+
+           // transform.DORotate(movObj.transform.eulerAngles, 1);
             GetComponent<Image>().raycastTarget = false;
 
             //lv5Controller.Instance.AddCount();
@@ -41,7 +46,7 @@ public class lv5Move : MonoBehaviour
         }
         else
         {
-            transform.DOMove(movePos.transform.position, 1f);
+            transform.DOMove(movePos.transform.position, .4f);
         }
     }
 }

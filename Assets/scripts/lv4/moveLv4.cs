@@ -52,7 +52,7 @@ public class moveLv4 : MonoBehaviour
             {
                 lv4Controller.Instance.AddCount();
                 _charScale.transform.DOScale(Vector3.one, .2f);
-                StartCoroutine(SpineAnimv4.Instance.ScaleOn());
+                
             });
            
             transform.SetParent(lv4Controller.Instance.pos.transform);

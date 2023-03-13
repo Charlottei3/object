@@ -28,6 +28,7 @@ public class EmotionChar : MonoBehaviour
         spineControl = GetComponent<AnimationSpineController>();
         spineControl.InitValue();
 
+        StartCoroutine(nameof(batDau));
     }
 
     public IEnumerator batDau()
@@ -60,6 +61,8 @@ public class EmotionChar : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         spineControl.PlayAnimation(animketThuc, true);
+
+        yield return new WaitForSeconds(3);
     }
 
 

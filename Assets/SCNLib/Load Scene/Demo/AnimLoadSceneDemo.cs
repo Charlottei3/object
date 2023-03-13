@@ -26,7 +26,7 @@ namespace SCN.Common
 				_ = DOTweenManager.Instance.TweenChangeAlphaCanvasGroup(panelCanvas, 1, 0, 0.5f)
 				.OnComplete(() =>
 				{
-					panelCanvas.gameObject.SetActive(false);
+					panelCanvas.gameObject.SetActive(true);
 					onComplete?.Invoke();
 				});
 			});

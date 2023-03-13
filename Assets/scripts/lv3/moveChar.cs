@@ -47,30 +47,22 @@ public class moveChar : DragObject
         void OnDrop(BaseEventData data)
         {
         Debug.Log(transform.name);
-       Debug.Log(type);
+        Debug.Log(type);
 
         if (Vector2.Distance(box.transform.position, transform.position) < 2)
         {
             Debug.Log(transform.gameObject);
-            /* if (type == TypeBox.red || type == TypeBox.pink || type == TypeBox.blue)
-             {
-                 transform.DOMove(box.gameObject[0].transform.position, 0.5f);
-             }
-             else
-             {
-                 transform.DOMove(box.gameObject[1].transform.position, 0.5f);
-             }*/
+           
             transform.DOMove(box.transform.position, .1f);
             transform.DOScale(Vector3.zero, .2f).OnComplete(() =>
            {
                _charScale.transform.DOScale(Vector3.one, .15f);
-               StartCoroutine(SpineAnimv4.Instance.ScaleOn());
            });
+
+            lv3Controller.Instance.Count(); 
         }
-        else
-        {
-            transform.DOMove(movePosition.transform.position, 1);
-        }
+       
+        transform.DOJump(movePosition.transform.position, 2f, 2, 1);
 
     }
         IEnumerator moveSpin()

@@ -18,6 +18,9 @@ public class lv8Controller : MonoBehaviour
     [SerializeField] List<Image> _instanceObj;
     [SerializeField] List<Image> _boxSelected;
 
+    [SerializeField] private GameObject stepone;
+    [SerializeField] private GameObject steptwo;
+
     int idSelect;
     int _hoiCham;
     int _ranTrue;
@@ -44,15 +47,16 @@ public class lv8Controller : MonoBehaviour
         _instanceObj[3].sprite = _addSprite[_ran_2];
     
         _hoiCham = Random.Range(0, _instanceObj.Count - 1);
-        _instanceObj[_hoiCham].sprite = _gameObjs[0];
+       
 
         Debug.Log("count hoi cham ? : " + _hoiCham);
         Debug.Log("sprite hoi cham ? : " + _instanceObj[_hoiCham].sprite.name);
        
-        _ranTrue = Random.Range(0, _boxSelected.Count -1);
-        //_ranTrue = idSelect;
+        _ranTrue = Random.Range(0,1);
+        _ranTrue = idSelect;
 
         _boxSelected[_ranTrue].sprite = _instanceObj[_hoiCham].sprite;
+
         Debug.Log("id bx1 :  " + _boxSelected[_ranTrue].sprite.name);
         Debug.Log("id bx1 :  " + _boxSelected[_ranTrue]);
         Debug.Log("id bx1 image true:  " + _instanceObj[_hoiCham].sprite.name);
@@ -63,6 +67,9 @@ public class lv8Controller : MonoBehaviour
         _boxSelected[_ranTrue == 0 ? 1 : 0].sprite = _instanceObj[_ran].sprite;
         Debug.Log("id bx2:  " + _boxSelected[_ranTrue == 0 ? 1 : 0]);
         Debug.Log("name image false: " + _instanceObj[_ran].sprite.name);
+
+        _instanceObj[_hoiCham].sprite = _gameObjs[0];
+
     }
 
     public void selectedItem(int id)
@@ -70,6 +77,15 @@ public class lv8Controller : MonoBehaviour
         if (id == idSelect)
         {
             _instanceObj[_hoiCham].sprite = _boxSelected[idSelect].sprite;
+
+            EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.Completed());
+   
+            stepone.SetActive(false);
+            steptwo.SetActive(true);
+        }
+        else
+        {
+            EmotionChar.Instance.StartCoroutine(EmotionChar.Instance.EmoFail());
         }
         Debug.Log(_instanceObj[_hoiCham].sprite.name);
         Debug.Log(_instanceObj[idSelect].sprite.name);

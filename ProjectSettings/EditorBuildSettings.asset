@@ -6,6 +6,33 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
+    path: Assets/Scenes/Home.unity
+    guid: 2a1c1c6dced6eaf46ad9f051cdcc46e1
+  - enabled: 1
+    path: Assets/Scenes/MenuGamePlay.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/xekem.unity
+    guid: 74a930a961a441547b09bee5650002fb
+  - enabled: 1
+    path: Assets/Scenes/lv3DuQuay.unity
+    guid: 464ab70c5c521644d94b90583379fcce
+  - enabled: 1
+    path: Assets/Scenes/lv4TauLuon.unity
+    guid: 05ca36841fb9b174e9e993bb4688595d
+  - enabled: 1
+    path: Assets/Scenes/lv5BongBay.unity
+    guid: 8887e3e2328ff9e45ad6b9c7d28d0f4f
+  - enabled: 1
+    path: Assets/Scenes/lv6Racing.unity
+    guid: 96c692121c2e7e3489028e8553dce34d
+  - enabled: 1
+    path: Assets/Scenes/lv7Noel.unity
+    guid: 364ad379d1086f74bad1bcd3623c85b4
+  - enabled: 1
+    path: Assets/Scenes/7.2ScrNoel.unity
+    guid: a7e4d64da43406c4a82eac29be95fa63
+  - enabled: 1
+    path: Assets/Scenes/lv8_cheer.unity
+    guid: 02ef2d24773e618419031256081f1fc1
   m_configObjects: {}

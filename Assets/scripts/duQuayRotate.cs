@@ -8,7 +8,7 @@ public class duQuayRotate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        transform.DORotate(new Vector3(0, 0, 360), 3, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
+        transform.DORotate(new Vector3(0, 0, 360), 5, RotateMode.FastBeyond360).SetLoops(-1, LoopType.Restart).SetEase(Ease.Linear);
     }
 
    

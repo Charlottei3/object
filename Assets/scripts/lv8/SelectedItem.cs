@@ -20,6 +20,8 @@ public class SelectedItem : MonoBehaviour
     }
     public void selectIe()
     {
-        lv8Controller.Instance.selectedItem(id);
+       
+       lv8Controller.Instance.selectedItem(id);
+      
     }
 }

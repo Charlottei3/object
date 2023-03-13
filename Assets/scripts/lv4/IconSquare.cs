@@ -1,3 +1,4 @@
+using SCN.Common;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -19,5 +20,6 @@ public class IconSquare : MonoBehaviour
         {
             lv4Controller.Instance._replace();
         }
+        
     }
 }
